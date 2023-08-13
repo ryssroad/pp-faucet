@@ -1,7 +1,7 @@
 import { stringToPath } from '@cosmjs/crypto'
 
 export default {
-    port: 5000, // http port 
+    port: 80, // http port 
     db: {
         path: "./db/faucet.db" // save request states 
     },
