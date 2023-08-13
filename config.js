@@ -169,8 +169,8 @@ export default {
             endpoint: {
                 // make sure that CORS is enabled in rpc section in config.toml
                 // cors_allowed_origins = ["*"]
-                rpc_endpoint: "https://cscd-rpc.systemd.run:443/",
-                evm_endpoint: "https://testnet.cascadia.foundation:443/",
+                rpc_endpoint: "https://cscd-rpc.systemd.run/",
+                evm_endpoint: "https://testnet.cascadia.foundation/",
             },
             sender: {
                 mnemonic: "mirror calm grace guide dismiss novel ramp bounce manage frost veteran burger group bridge ocean primary lucky thought festival siren use regret slush problem",
