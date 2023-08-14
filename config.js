@@ -1,7 +1,7 @@
 import { stringToPath } from '@cosmjs/crypto'
 
 export default {
-    port: 8080, // http port 
+    port: 5000, // http port 
     db: {
         path: "./db/faucet.db" // save request states 
     },
@@ -202,7 +202,48 @@ export default {
                 ip: 1000 
             }
         },
-
-
+        {
+            type: 'Ethermint',
+            ids: {
+                chainId: 7000,
+                cosmosChainId: 'uptickd_7000-2',
+            },
+            name: "uptickd_7000-2",
+            endpoint: {
+                // make sure that CORS is enabled in rpc section in config.toml
+                // cors_allowed_origins = ["*"]
+                rpc_endpoint: "http://52.220.252.160:26657/",
+                evm_endpoint: "http://52.220.252.160:8545/",
+            },
+            sender: {
+                mnemonic: "wise rule method circle general over tool exhibit over group nuclear meat inform rival before short inner bind short enact team dinner swift ritual",
+                option: {
+                    hdPaths: [stringToPath("m/44'/60'/0'/0/0")],
+                    prefix: "uptick"
+                }
+            },
+            tx: {
+                amount: {
+                    denom: "auptick",
+                    amount: "5000000000000000000"
+                },
+                fee: {
+                    amount: [
+                        {
+                            amount: "100000",
+                            denom: "auptick"
+                        }
+                    ],
+                    gas: "10000000000000"
+                },
+            },
+            limit: {
+                // how many times each wallet address is allowed in a window(24h)
+                address: 1, 
+                // how many times each ip is allowed in a window(24h),
+                // if you use proxy, double check if the req.ip is return client's ip.
+                ip: 10 
+            }
+        },
     ]    
 }
